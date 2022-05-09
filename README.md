@@ -5,7 +5,16 @@
 ```mermaid
 classDiagram
 
- class User{
- -String name
+ class Enfant{
+ -String nom
+ -String prenom
+ -String login
+ -String mdp
+ -String mail
  }
+ Enfant --> "*" Cours : listCours
+ 
+ class Cours{
+ }
+ 
 ```
