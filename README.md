@@ -5,7 +5,8 @@
 ```mermaid
 classDiagram
 
- class <<Enfant>>{
+ class Enfant{
+ <<abstract>>
  -String nom
  -String prenom
  -String login
@@ -49,7 +50,7 @@ classDiagram
  -StringLienParenté
  }
  
- 
- 
+ EnfantSeul --|> Enfant:Inheritance
+ EnfantAvecParent --|> Enfant :Inheritence
  
 ```
