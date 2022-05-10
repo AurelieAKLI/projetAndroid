@@ -42,7 +42,7 @@ classDiagram
  -int montant
  }
  
- class EnfantSeul{
+ class EnfantAutonome{
  
  }
  EnfantSeul --> Facture : listePaiements
