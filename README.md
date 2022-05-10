@@ -5,16 +5,14 @@
 ```mermaid
 classDiagram
 
- class Enfant{
+ class Identite{
  <<abstract>>
  -String nom
  -String prenom
  -String login
  -String mdp
  -String mail
- -Planning p
  }
- Enfant --> "*" Cours : listeCours
  
  class Cours{
  -String niveau
@@ -22,35 +20,46 @@ classDiagram
  -String sousMatiere
  -String codeCours
  }
+ Cours --> CreneauHoraire : listeHoraires
+ 
+ class CreneauHoraire{
+ -LocalDateTime debut
+ -LocalDateTime fin
+
+ }
+
  
  class Parent{
- -String nom
- -String prenom
- -String login
- -String mdp
- -String mail
  -int nbEnfants
  }
- Parent --> Enfant : listEnfant
- Parent --> Tarif : listePaiement
  
- class Tarif{
+ Parent --> EnfantAvecParent : listeEnfants
+ Parent --> Facture : listePaiements
+ 
+ class Facture{
  -int nbHeures
  -bool accompagement
- -int total
+ -int montant
  }
  
  class EnfantSeul{
  
  }
- EnfantSeul --> Tarif : listePaiement
+ EnfantSeul --> Facture : listePaiements
+ EnfantSeul --> Cours : listeCours
+
  
  class EnfantAvecParent{
  -String nomParent
  -StringLienParenté
  }
+ EnfantAvecParent --> Cours : listeCours
+
  
- EnfantSeul --|> Enfant:Inheritance
- EnfantAvecParent --|> Enfant :Inheritence
+ EnfantSeul --|> Identite:Inheritance
+ EnfantAvecParent --|> Identite :Inheritence
+ Parent --|> Identite :Inheritence
+
+ 
  
 ```
