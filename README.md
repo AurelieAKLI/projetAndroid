@@ -45,8 +45,8 @@ classDiagram
  class EnfantAutonome{
  
  }
- EnfantSeul --> Facture : listePaiements
- EnfantSeul --> Cours : listeCours
+ EnfantAutonome --> Facture : listePaiements
+ EnfantAutonome --> Cours : listeCours
 
  
  class EnfantAvecParent{
@@ -56,7 +56,7 @@ classDiagram
  EnfantAvecParent --> Cours : listeCours
 
  
- EnfantSeul --|> Identite:Inheritance
+ EnfantAutonome --|> Identite:Inheritance
  EnfantAvecParent --|> Identite :Inheritence
  Parent --|> Identite :Inheritence
 
